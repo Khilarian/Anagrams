@@ -7,6 +7,9 @@
  * Also it stores alphabet that used to determine is character is letter.
  *
  */
+
+package com.foxminded.anagram;
+
 public class Text {
 
 	final static String ALPHABET = "abcdefghijklmnopqrstuvwxyz"; //default alphabet.

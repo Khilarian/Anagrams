@@ -6,6 +6,9 @@
  * This class mutate input text with one of provided methods.
  *
  */
+
+package com.foxminded.anagram;
+
 public class AppStarter {
 	
 	public static void main(String [] args) {

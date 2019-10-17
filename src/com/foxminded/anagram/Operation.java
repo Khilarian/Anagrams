@@ -6,6 +6,9 @@
  * Interface for all actions for all texts operations;
  *
  */
+
+package com.foxminded.anagram;
+
 public interface Operation {
 
 	/*

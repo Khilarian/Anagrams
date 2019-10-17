@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 
  * @author Kirill Rumakin
@@ -9,6 +6,13 @@ import java.util.Map;
  * This class combines all types of operation in one.
  *
  */
+
+package com.foxminded.anagram;
+
+import java.util.HashMap;
+
+import java.util.Map;
+
 public class Mutator {
 
 	private String result;

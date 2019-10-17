@@ -9,6 +9,8 @@
  *
  */
 
+package com.foxminded.anagram;
+
 public class AnagramOnlyChar implements Operation{
 
 	//every operation has its own name that used in operation() method.
