@@ -11,13 +11,11 @@ package com.foxminded.anagram;
 
 public interface Operation {
 
-	/*
-	 * @return type of operation
-	 */
-	String operation();
-	
+
 	/*
 	 * @return result of operation
 	 */
 	String handleText(Text text);
+	
+	
 }

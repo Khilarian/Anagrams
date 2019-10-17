@@ -13,11 +13,9 @@ public class AppStarter {
 	
 	public static void main(String [] args) {
 		Text text = new Text("hello, my brother from 2k19!");
-		Mutator mutator = new Mutator();
-		
-		mutator.mutateText(text, "anagramsOnlyChar");
-		
-		System.out.println(mutator.getResult());
+		AnagramOnlyChar anagram = new AnagramOnlyChar();
+			
+		System.out.println(anagram.handleText(text));
 	}
 
 }
