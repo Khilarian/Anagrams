@@ -16,16 +16,16 @@ public class LetterAnagram {
 	
 	private String handleWord(String word) {
 		StringBuilder sb = new StringBuilder();
-		int indexLastLetter = word.length() - 1; 	
-		
-		for (int i = 0; i < word.length(); i++) { 
-			char currChar = word.charAt(i);
-			if (!Character.isLetter(currChar)) {			
-				sb.append(currChar);
+		 	
+		for (int i = 0; i < word.length(); i++) {
+		    int indexLastLetter = word.length() - 1;
+			char currentChar = word.charAt(i);
+			if (!Character.isLetter(currentChar)) {			
+				sb.append(currentChar);
 			}
 			else {
-				char revChar = word.charAt(indexLastLetter);
-				if (Character.isLetter(revChar)) {   		
+				char lastLetterChar = word.charAt(indexLastLetter);
+				if (Character.isLetter(lastLetterChar)) {   		
 					sb.append(String.valueOf(word.charAt(indexLastLetter)));
 					indexLastLetter--;
 				}
