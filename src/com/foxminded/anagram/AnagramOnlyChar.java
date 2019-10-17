@@ -11,6 +11,9 @@
 
 package com.foxminded.anagram;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class AnagramOnlyChar implements Operation{
 
 	//every operation has its own name that used in operation() method.
@@ -26,7 +29,7 @@ public class AnagramOnlyChar implements Operation{
 		
 		for (int j = 0; j < wordsArray.length; j++) {
 			String word = wordsArray[j];
-			StringBuffer sb = new StringBuffer();
+			StringBuilder sb = new StringBuilder();
 			
 			int k = word.length() -1 ; 								
 			/*index of last non-added char from tail of word.*/
@@ -82,12 +85,10 @@ public class AnagramOnlyChar implements Operation{
 	 * @return mutation of original text. 
 	 */ 
 	private String toString(String [] array) {
-		StringBuilder returnString = new StringBuilder();
-		for (int i = 0; i < array.length; i++) {
-			returnString.append(array[i]);
-			returnString.append(" ");
-		}
-		return returnString.toString().trim();
-	}
 	
+		List<String> list = Arrays.asList(array);
+		String result = String.join(" ", list);
+		
+		return result;
+	}
 }
