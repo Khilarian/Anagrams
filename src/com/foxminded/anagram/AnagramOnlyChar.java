@@ -24,14 +24,14 @@ public class AnagramOnlyChar implements Operation{
 	
 	@Override
 	public String handleText(Text text) {
-		String[] wordsArray = text.getWordsArray();
-		String[] returnArray = new String[wordsArray.length];
+		String[] words = text.getWordsArray();
+		String[] result = new String[words.length];
 		
-		for (int j = 0; j < wordsArray.length; j++) {
-			String word = wordsArray[j];
+		for (int j = 0; j < words.length; j++) {
+			String word = words[j];
 			StringBuilder sb = new StringBuilder();
 			
-			int k = word.length() -1 ; 								
+			int indexLastLetter = word.length() -1 ; 								
 			/*index of last non-added char from tail of word.*/
 			
 			for (int i = 0; i< word.length(); i++) { 
@@ -42,24 +42,24 @@ public class AnagramOnlyChar implements Operation{
 				}
 				else 
 				{
-					String revChar = String.valueOf(word.charAt(k));
+					String revChar = String.valueOf(word.charAt(indexLastLetter));
 					if (Text.ALPHABET.contains(revChar)) {   		
 						/*if both character from head and tail is letter, add char from tail.*/
-						sb.append(String.valueOf(word.charAt(k)));
-						k--;
+						sb.append(String.valueOf(word.charAt(indexLastLetter)));
+						indexLastLetter--;
 					}else {
 						/*if character from head is letter and character from tail word is not,
 						 *  add first letter from tail before non-letter character.
 						 */
-						k = findCharIndex(word,k);					 
-						sb.append(word.charAt(k));
-						k--;
+						indexLastLetter = findCharIndex(word,indexLastLetter);					 
+						sb.append(word.charAt(indexLastLetter));
+						indexLastLetter--;
 					}			
 				}
 			}
-			returnArray[j] = sb.toString();
+			result[j] = sb.toString();
 		}	
-		return toString(returnArray);
+		return toString(result);
 	}
 	
 	/*
