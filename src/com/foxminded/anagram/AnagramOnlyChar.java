@@ -36,14 +36,14 @@ public class AnagramOnlyChar implements Operation{
 			
 			for (int i = 0; i< word.length(); i++) { 
 				String currChar = String.valueOf(word.charAt(i));
-				if (!Text.ALPHABET.contains(currChar)) {			
+				if (!Alphabet.ALPHABET.contains(currChar)) {			
 					/*if character from head is not letter, put it in new word.*/
 					sb.append(currChar);
 				}
 				else 
 				{
 					String revChar = String.valueOf(word.charAt(indexLastLetter));
-					if (Text.ALPHABET.contains(revChar)) {   		
+					if (Alphabet.ALPHABET.contains(revChar)) {   		
 						/*if both character from head and tail is letter, add char from tail.*/
 						sb.append(String.valueOf(word.charAt(indexLastLetter)));
 						indexLastLetter--;
@@ -69,7 +69,7 @@ public class AnagramOnlyChar implements Operation{
 	private int findCharIndex(String word, int index) {
 		int returnIndex = 0;
 		for (int i = index; i >= 0; i--) {
-			if (Text.ALPHABET.contains(String.valueOf(word.charAt(i))) ) {
+			if (Alphabet.ALPHABET.contains(String.valueOf(word.charAt(i))) ) {
 				returnIndex = i;
 				break;
 			}

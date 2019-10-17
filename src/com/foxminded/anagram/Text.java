@@ -11,8 +11,6 @@
 package com.foxminded.anagram;
 
 public class Text {
-
-	final static String ALPHABET = "abcdefghijklmnopqrstuvwxyz"; //default alphabet.
 	
 	private final String inputString;
 	private final String [] words;
