@@ -9,12 +9,12 @@ public class LetterAnagram {
 		String[] words = text.split(" +");
 		String[] result = new String[words.length];	
 		for (int i = 0; i < words.length; i++) {
-			result[i] = handleWord(words[i]);
+			result[i] = makeWordAnagram(words[i]);
 		}	
 		return toString(result);
 	}
 	
-	private String handleWord(String word) {
+	private String makeWordAnagram(String word) {
 		StringBuilder sb = new StringBuilder();
 		 	
 		for (int i = 0; i < word.length(); i++) {
@@ -22,15 +22,13 @@ public class LetterAnagram {
 			char currentChar = word.charAt(i);
 			if (!Character.isLetter(currentChar)) {			
 				sb.append(currentChar);
-			}
-			else {
+			} else {
 				char lastLetterChar = word.charAt(indexLastLetter);
 				if (Character.isLetter(lastLetterChar)) {   		
-					sb.append(String.valueOf(word.charAt(indexLastLetter)));
+					sb.append(word.charAt(indexLastLetter));
 					indexLastLetter--;
-				}
-				else {
-					indexLastLetter = findLetterIndex(word, indexLastLetter);					 
+				} else {
+					indexLastLetter = previousLetterIndex(word, indexLastLetter);					 
 					sb.append(word.charAt(indexLastLetter));
 					indexLastLetter--;
 				}			
@@ -40,7 +38,7 @@ public class LetterAnagram {
 	}
 	
 
-	private int findLetterIndex(String word, int index) {
+	private int previousLetterIndex(String word, int index) {
 		int returnIndex = 0;
 		for (int i = index; i >= 0; i--) {
 			if (Character.isLetter(word.charAt(i)))  {
