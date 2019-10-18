@@ -11,14 +11,15 @@ public class LetterAnagram {
 		for (int i = 0; i < words.length; i++) {
 			result[i] = makeWordAnagram(words[i]);
 		}	
-		return toString(result);
+		return String.join(" ",result);
 	}
 	
 	private String makeWordAnagram(String word) {
 		StringBuilder sb = new StringBuilder();
-		 	
+		int indexLastLetter = word.length() - 1;
+		
 		for (int i = 0; i < word.length(); i++) {
-		    int indexLastLetter = word.length() - 1;
+		    
 			char currentChar = word.charAt(i);
 			if (!Character.isLetter(currentChar)) {			
 				sb.append(currentChar);
@@ -48,11 +49,6 @@ public class LetterAnagram {
 		}
 		return returnIndex;
 	}
-	
-	
-	private String toString(String [] array) {
-		List<String> list = Arrays.asList(array);
-		String result = String.join(" ", list);	
-		return result;
-	}
 }
+    
+ 
