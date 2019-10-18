@@ -1,6 +1,6 @@
 /bin/
 /.settings/
 .settings/
-.project
-.gitignore
-.classpath
+.project 
+.gitignore  
+.classpath 
