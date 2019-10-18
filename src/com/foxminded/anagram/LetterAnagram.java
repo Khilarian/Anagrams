@@ -6,7 +6,7 @@ public class LetterAnagram {
         String [] words = text.split(" +");
         String [] result = new String [words.length];
         for (int i = 0; i < result.length; i++) {
-            result[i] = makeWordAnagram(words[i]);
+            result [i] = makeWordAnagram(words[i]);
         }	
         return String.join(" ", result);
     }
