@@ -11,23 +11,21 @@ public class LetterAnagram {
         return String.join(" ", result);
     }
 	
-
     private String makeWordAnagram(String word) {
-        StringBuilder sb = new StringBuilder(word);
-        int indexLastLetter = word.length() - 1;
-        for(int i = 0; i < sb.length() && i < indexLastLetter; i++) {
+        char[] sb = word.toCharArray();
+        for(int i = 0, j =word.length() -1; i < sb.length && i < j; i++) {
             if (Character.isLetter(word.charAt(i))) {
-                swap(sb, i, previousLetterIndex(word, indexLastLetter));
-                indexLastLetter--;
+                swap(sb, i, previousLetterIndex(word, j));
+                j--;
             }
         }
-        return sb.toString();
+        return new String(sb);
     }
     
-    private void swap(StringBuilder word, int first, int second) {
-        char temp = word.charAt(first);
-        word.setCharAt(first, word.charAt(second));
-        word.setCharAt(second, temp);    
+    private void swap(char[] word, int first, int second) {
+        char temp = word[first];
+        word[first] = word[second];
+        word[second] = temp;;    
     }
     
     private int previousLetterIndex(String word, int index) {
@@ -36,7 +34,7 @@ public class LetterAnagram {
                 return i;	
             }
         }
-        return -1;
+        throw new IllegalArgumentException("No such index.");
     }
 }
     
