@@ -11,15 +11,15 @@ public class LetterAnagram {
         return String.join(" ", result);
     }
 	
-    private String makeWordAnagram(String word) {
-        char[] sb = word.toCharArray();
-        for(int i = 0, j =word.length() -1; i < sb.length && i < j; i++) {
-            if (Character.isLetter(word.charAt(i))) {
-                swap(sb, i, previousLetterIndex(word, j));
+    private String makeWordAnagram(String inputWord) {
+        char[] word = inputWord.toCharArray();
+        for(int i = 0, j = inputWord.length() -1; i < word.length && i < j; i++) {
+            if (Character.isLetter(inputWord.charAt(i))) {
+                swap(word, i, previousLetterIndex(inputWord, j));
                 j--;
             }
         }
-        return new String(sb);
+        return new String(word);
     }
     
     private void swap(char[] word, int first, int second) {
@@ -34,9 +34,7 @@ public class LetterAnagram {
                 return i;	
             }
         }
-        throw new IllegalArgumentException("No such index.");
+        throw new IllegalArgumentException("No more letter in word");
     }
 }
     
-
- 
