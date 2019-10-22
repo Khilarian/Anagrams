@@ -34,6 +34,6 @@ public class LetterAnagram {
                 return i;
             }
         }
-        throw new IllegalArgumentException("No more letter in word");
+        throw new IllegalArgumentException("Invalid first argument: 'word' -> " + word +", the argument must contain at least one letter.");
     }
 }
