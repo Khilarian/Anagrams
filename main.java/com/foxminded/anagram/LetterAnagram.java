@@ -1,17 +1,21 @@
 package com.foxminded.anagram;
 
+import java.util.ArrayList;
+
 public class LetterAnagram {
     
     public String makeAnagram(String text) {
-        if (text == null) {
-            throw new NullPointerException("Input text can't be null");
+        ArrayList<String> words = new ArrayList<String>();
+        for (int i = 0, j = 0; i < text.length(); i = j + 1) {
+            j = text.indexOf(' ', i);
+            if (j != -1) {
+                words.add(makeWordAnagram(text.substring(i, j + 1)));
+            } else {
+                words.add(makeWordAnagram(text.substring(i, text.length())));
+                break;
+            }             
         }
-        String[] words = text.split(" +");
-        String[] result = new String[words.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = makeWordAnagram(words[i]);
-        }
-        return String.join(" ", result);
+        return String.join("", words);
     }
     
     private String makeWordAnagram(String inputWord) {
