@@ -1,10 +1,10 @@
-package com.foxminded.anagram;
+package test.java.com.foxminded.anagram;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.foxminded.anagram.LetterAnagram;
+import main.java.com.foxminded.LetterAnagram;
 
 class LetterAnagramTest {
     

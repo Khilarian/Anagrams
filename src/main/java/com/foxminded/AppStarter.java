@@ -1,4 +1,4 @@
-package com.foxminded.anagram;
+package main.java.com.foxminded;
 
 public class AppStarter {
 	
