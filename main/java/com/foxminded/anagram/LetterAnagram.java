@@ -1,4 +1,4 @@
-package main.java.com.foxminded;
+package com.foxminded.anagram;
 
 import java.util.ArrayList;
 
