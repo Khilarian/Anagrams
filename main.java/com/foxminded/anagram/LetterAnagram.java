@@ -3,6 +3,9 @@ package com.foxminded.anagram;
 public class LetterAnagram {
     
     public String makeAnagram(String text) {
+        if (text == null) {
+            throw new NullPointerException("Input text can't be null");
+        }
         String[] words = text.split(" +");
         String[] result = new String[words.length];
         for (int i = 0; i < result.length; i++) {
