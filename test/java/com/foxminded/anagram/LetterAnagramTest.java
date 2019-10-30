@@ -1,6 +1,7 @@
 package com.foxminded.anagram;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -37,7 +38,7 @@ class LetterAnagramTest {
     }
         
     @Test
-    void makeAnagramReturnThreeEqualsLetterWhenInputIsThreeEqualsLetter() {
+    void makeAnagramReturnThreeSameLetterWhenInputIsThreeSameLetter() {
         String expected = "ттт";
         String actual = anagram.makeAnagram("ттт");
         assertEquals(expected, actual);
@@ -51,7 +52,7 @@ class LetterAnagramTest {
     }
         
     @Test
-    void makeAnagramReturnReversesWordWithDifferentCasesWheinInputIsWordWithDifferentCases() {
+    void makeAnagramReturnReversedWordWithDifferentCasesWhenInputIsWordWithDifferentCases() {
         String expected = "aaaAAa";
         String actual = anagram.makeAnagram("aAAaaa");
         assertEquals(expected, actual);
@@ -72,9 +73,14 @@ class LetterAnagramTest {
     }
     
     @Test
-    void makeAnagramReturnWordsInTheSamePositionWhereWordsAreReversedExceptNonLettersWhenInputIsSomeWords() {
+    void makeAnagramReturnWordsInTheSamePositionWhereWordsAreReversedExceptNonLettersWhenInputIsFewWords() {
         String expected = "It is a 1 of 8teen day!";
         String actual = anagram.makeAnagram("tI si a 1 fo 8neet yad!");
         assertEquals(expected, actual);
+    }
+    
+    @Test
+    void makeAnagramReturnNullPointerExceptionWhenInputIsNull() {
+        assertThrows(NullPointerException.class, () -> anagram.makeAnagram(null));
     }
 }
