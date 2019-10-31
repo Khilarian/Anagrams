@@ -31,21 +31,7 @@ class LetterAnagramTest {
         String actual = anagram.makeAnagram("   ");
         assertEquals(expected, actual);
     }
-        
-    @Test
-    void makeAnagramReturnOneLetterWhenInputIsOneLetter() {
-        String expected = "с";
-        String actual = anagram.makeAnagram("с");
-        assertEquals(expected, actual);
-    }
-        
-    @Test
-    void makeAnagramReturnThreeSameLetterWhenInputIsThreeSameLetter() {
-        String expected = "ттт";
-        String actual = anagram.makeAnagram("ттт");
-        assertEquals(expected, actual);
-    }
- 
+    
     @Test
     void makeAnagramReturnOneReversedWordInLowerCaseWhenInputIsOneWordInLowerCase() {
         String expected = "sesac";
