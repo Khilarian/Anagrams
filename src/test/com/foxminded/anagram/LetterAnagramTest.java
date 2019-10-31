@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+import com.foxminded.anagram.LetterAnagram;
+
 class LetterAnagramTest {
     
     LetterAnagram anagram = new LetterAnagram();
