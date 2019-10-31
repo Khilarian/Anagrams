@@ -48,8 +48,8 @@ class LetterAnagramTest {
  
     @Test
     void makeAnagramReturnOneReversedWordInLowerCaseWhenInputIsOneWordInLowerCase() {
-        String expected = "esac";
-        String actual = anagram.makeAnagram("case");
+        String expected = "sesac";
+        String actual = anagram.makeAnagram("cases");
         assertEquals(expected, actual);
     }
         
